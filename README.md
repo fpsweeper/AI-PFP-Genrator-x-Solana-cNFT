@@ -1,27 +1,16 @@
-# DallEApp
+# AI PFP Generator X Solana cNFT
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+This project is a Solana PFP generator webapp, using both Dall E API and Helius API you can generate a AI PFP using some text that you write in the prompt field, and then if you decide to have it as cNFT you just hit a click and it will be airdroped to you wallet.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# How to install and use the webapp ?
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Change properties in the src/config.json file to yours (bearer: Dall E api key, helius_key: Helius api key)
+Run `ng install`
+Run `ng serve`
+Go to `http://localhost:4200`
+Enjoooooy !!
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
