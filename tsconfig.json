@@ -2,6 +2,23 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths":{
+      "crypto":["../node_modules/crypto-browserify"],
+      "assert":["../node_modules/assert"],
+      "stream":["../node_modules/stream-browserify"],
+      "zlib":["../node_modules/browserify-zlib"],
+      "path":["../node_modules/path-browserify"],
+      "buffer": ["../node_modules/buffer"],
+      "constants": ["../node_modules/constants-browserify"],
+      "fs": ["../node_modules/fs-extra"],
+      "http": ["../node_modules/stream-http"],
+      "https": ["../node_modules/https-browserify"],
+      "url": ["../node_modules/url"]
+    },
+
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

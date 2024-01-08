@@ -1,0 +1,84 @@
+
+<div style="min-width: 100%; justify-content: center; align-items: center; text-align: center; height: 80vh; display: flex;">
+    <div class="img-card">
+        <p-image [src]="generatedImg == '' ? '../../assets/rzlogo.jpg':generatedImg"  alt="Image" width="100%" [preview]="true"></p-image>
+
+        <button class="button" style="left: 5px !important;" [style.cursor]="generateLoading ? 'not-allowed':'pointer'" (click)="openGenerateModal()">
+            <span>Generate AI image
+          </span>
+        </button>
+
+        <button class="button" style="right: 5px !important;" (click)="createClicked()">
+            <span>Create cNFT
+          </span>
+        </button>
+    </div>
+</div>
+<p-toast></p-toast>
+
+<div *ngIf="generateModalOpened || walletModalOpen" (click)="closeGenerateModal()" style="position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; background-color: rgba(0, 0, 0, 0.5);">
+    
+</div>
+
+<div *ngIf="generateModalOpened" class="modal-ai">
+    <div style="padding: 5px;">
+        Generate an AI PFP
+    </div>
+    <hr style="border: 1px solid black;">
+    <div>
+        <h4>Your Prompt</h4>
+        <textarea [(ngModel)]="promptt" maxlength="100" data-info="My String" style="resize: none; width: 90%; height: 20vh;"></textarea>
+    </div>
+
+    <p-progressBar *ngIf="generateLoading" mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+
+    <div style="display: flex; width: 100%; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+        <button class="button" style="right: 5px !important; position: relative !important;" (click)="generateClicked()" [disabled]="generateLoading" [style.cursor]="generateLoading ? 'not-allowed':'pointer'">
+            <span>Generate
+          </span>
+        </button>
+    </div>
+    
+</div>
+
+<div *ngIf="walletModalOpen" class="modal-wallet">
+    <div style="padding: 5px;">
+        Choose your wallet provider
+    </div>
+    <hr style="border: 1px solid black;">
+
+    <div class="wallet-card" *ngFor="let wallet of walletService.wallets$ | async" >
+        <a type="button" (click)="walletConnect(wallet)" style="display: block;">
+            <div *ngIf="wallet.adapter.name === 'Phantom'" style="display: flex; width: 100%; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+                <button class="button" style="right: 5px !important; position: relative !important;" [disabled]="generateLoading">
+                    <img *ngIf="wallet.adapter.name === 'Phantom'" src="../../assets/phantom.png" width="32px" style="margin-right: 5px; z-index: 500;" alt="">
+                    <span *ngIf="wallet.adapter.name === 'Phantom'" >Phantom
+                  </span>
+                </button>
+            </div>
+
+            <div *ngIf="wallet.adapter.name === 'Solflare'" style="display: flex; width: 100%; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+                <button class="button" style="right: 5px !important; position: relative !important;" [disabled]="generateLoading">
+                    <img src="../../assets/solflare.png" width="32px" style="margin-right: 5px; z-index: 500;" alt="">
+                    <span>Solflare
+                  </span>
+                </button>
+            </div>
+        </a>
+    </div>
+
+    
+    
+</div>
+
+<div *ngIf="generatingCNFT" class="modal-wallet">
+    <div style="padding: 5px;">
+        Generating cNFT
+    </div>
+    <hr style="border: 1px solid black;">
+
+    <div style="min-height: 180px; min-width: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <p-progressSpinner></p-progressSpinner>
+    </div>
+    
+</div>

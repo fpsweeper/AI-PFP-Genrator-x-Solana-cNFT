@@ -1,0 +1,27 @@
+.cont{
+    position: absolute;
+    bottom: 0px;
+    max-height: 4hv;
+
+    background-color: rgba(74, 74, 74, 0.5);
+    color: white;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    line-height: 70px;
+    box-shadow: rgb(255, 255, 255) 0px 10px 20px -10px;
+    font-size: 15px;
+    font-weight: 800;
+    padding-left: 8px;
+}
+
+.links {
+    position: absolute;
+    right: 0px;
+    top: 8px;
+}
+
+.imm:hover {
+    transform: scale(1.2);
+}

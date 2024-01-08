@@ -1,0 +1,157 @@
+.img-card {
+    border: 3px solid white;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    height: 450px;
+    width: 512px;
+    border-radius: 1em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: white;
+}
+
+:host ::ng-deep .p-image-preview-container { 
+    border-radius: 0.5em;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    left: 0;
+    top: 0;
+}
+
+
+
+.button {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px 20px;
+    background-color: #212121;
+    border: none;
+    font: inherit;
+    color: #e8e8e8;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    translate: 0 105%;
+    background-color: #F53844;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .button svg {
+    width: 32px;
+    height: 32px;
+    fill: #F53844;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .button:hover {
+    animation: shake 0.2s linear 1;
+  }
+  
+  .button:hover::before {
+    translate: 0 0;
+  }
+  
+  .button:hover svg {
+    fill: #e8e8e8;
+  }
+  
+  @keyframes shake {
+    0% {
+      rotate: 0deg;
+    }
+  
+    33% {
+      rotate: 10deg;
+    }
+  
+    66% {
+      rotate: -10deg;
+    }
+  
+    100% {
+      rotate: 10deg;
+    }
+  }
+  
+  .modal-ai {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 400px;
+    height: 350px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto; 
+    margin-bottom: auto; 
+    border-radius: 1em;
+    border: 2px solid black;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    animation-name: example;
+    animation-duration: 0.3s;
+  }
+
+
+  @keyframes example {
+    0%   {transform: scale(0.5)}
+    75%  {transform: scale(1.1)}
+    100% {transform: scale(1)}
+  }
+
+  .modal-wallet {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 400px;
+    height: 250px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto; 
+    margin-bottom: auto; 
+    border-radius: 1em;
+    border: 2px solid black;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    animation-name: example;
+    animation-duration: 0.3s;
+  }
